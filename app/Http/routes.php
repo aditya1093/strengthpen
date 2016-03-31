@@ -19,6 +19,7 @@ Route::auth();
 | Can be accessed by all users
 */
 Route::get('/', 'PublicController@index');
+Route::get('/how-it-works', 'PublicController@howItWorks');
 
 /*
 | Home Routes

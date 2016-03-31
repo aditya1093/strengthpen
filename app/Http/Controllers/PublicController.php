@@ -27,4 +27,13 @@ class PublicController extends Controller
     {
         return view('welcome');
     }
+
+    /**
+     * Show the how it works page
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function howItWorks() {
+        return view('how-it-works');
+    }
 }
