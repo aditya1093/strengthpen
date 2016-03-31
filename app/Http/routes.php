@@ -11,10 +11,13 @@
 |
 */
 
+/* Added routes for authentication */
+Route::auth();
+
+/* Welcome Route */
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::auth();
-
+/* Home Routes */
 Route::get('/home', 'HomeController@index');
