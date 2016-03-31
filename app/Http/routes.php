@@ -25,4 +25,4 @@ Route::get('/', 'PublicController@index');
 |--------------------------------------------------------------------------
 | Can only be accessed by logged in users
 */
-Route::get('/home', 'HomeController@index');
+Route::get('/dashboard', 'HomeController@index');
