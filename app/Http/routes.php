@@ -4,20 +4,25 @@
 |--------------------------------------------------------------------------
 | Application Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
 */
 
-/* Added routes for authentication */
+/*
+| Authentication Routes
+|--------------------------------------------------------------------------
+| Adds routes for /login, /logout, /register and /password/reset
+*/
 Route::auth();
 
-/* Welcome Route */
-Route::get('/', function () {
-    return view('welcome');
-});
+/*
+| Public Routes
+|--------------------------------------------------------------------------
+| Can be accessed by all users
+*/
+Route::get('/', 'PublicController@index');
 
-/* Home Routes */
+/*
+| Home Routes
+|--------------------------------------------------------------------------
+| Can only be accessed by logged in users
+*/
 Route::get('/home', 'HomeController@index');
