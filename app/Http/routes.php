@@ -18,7 +18,7 @@ Route::auth();
 |--------------------------------------------------------------------------
 | Can be accessed by all users
 */
-Route::get('/', 'PublicController@index');
+Route::get('/', 'PublicController@welcome');
 Route::get('/how-it-works', 'PublicController@howItWorks');
 
 /*
@@ -26,4 +26,4 @@ Route::get('/how-it-works', 'PublicController@howItWorks');
 |--------------------------------------------------------------------------
 | Can only be accessed by logged in users
 */
-Route::get('/dashboard', 'HomeController@index');
+Route::get('/dashboard', 'HomeController@dashboard');

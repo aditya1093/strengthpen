@@ -23,7 +23,7 @@ class PublicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function welcome()
     {
         return view('welcome');
     }
