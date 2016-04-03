@@ -12,8 +12,8 @@
                 <div class="panel-heading">Add a new plan</div>
 
                 <div class="panel-body">
-                    @include('common.errors')
-                    
+                    @include('errors.common')
+
                     <form action="{{ url('plan') }}" method="POST" class="form-horizontal">
                         {!! csrf_field() !!}
 
@@ -48,9 +48,18 @@
                 <div class="panel-body">
                     @if(count($plans) !== 0)
                         @foreach ($plans as $plan)
-                        <div class="plan-card col-md-4">
-                            <div>{{ $plan->name }}</div>
-                            <div>{{ $plan->description }}</div>
+                        <div class="plan plan-{{ $plan->id }}  panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">{{ $plan->name }}</h3>
+                            </div>
+                            <div class="panel-body">
+                                {{ $plan->description }}
+                            </div>
+                            <div class="panel-footer">
+                                <button type="submit" class="btn btn-default">
+                                    <i class="fa fa-btn fa-plus"></i> Delete
+                                </button>
+                            </div>
                         </div>
                         @endforeach
                     @else

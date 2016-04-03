@@ -5,3 +5,9 @@ body {
 .fa-btn {
     margin-right: 6px;
 }
+
+.plan {
+    width: 32%;
+    float: left;
+    margin-right: 1.3333%
+}
