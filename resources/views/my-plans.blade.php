@@ -33,7 +33,7 @@
 
                         <div class="form-group">
                             <div class="col-sm-offset-3 col-sm-6">
-                                <button type="submit" class="btn btn-default">
+                                <button type="submit" class="btn btn-success">
                                     <i class="fa fa-btn fa-plus"></i> Add Plan
                                 </button>
                             </div>
@@ -56,8 +56,8 @@
                                 {{ $plan->description }}
                             </div>
                             <div class="panel-footer">
-                                <button type="submit" class="btn btn-default">
-                                    <i class="fa fa-btn fa-plus"></i> Delete
+                                <button type="submit" class="btn btn-danger">
+                                    <i class="fa fa-btn fa-trash"></i> Delete
                                 </button>
                             </div>
                         </div>
