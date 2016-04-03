@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Plan;
+use App\User;
 
 class PlanController extends Controller
 {
@@ -40,11 +41,16 @@ class PlanController extends Controller
      */
     public function addPlan(Request $request)
     {
-        $reqUserID = $request->user()->id;
-        $plans = Plan::where('user_id', $reqUserID)->get();
-
-        return view('my-plans', [
-            'plans' => $plans,
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'description' => 'required|max:255',
         ]);
+
+        $request->user()->plans()->create([
+            'name' => $request->name,
+            'description' => $request->description,
+        ]);
+
+        return redirect('/my-plans');
     }
 }
