@@ -53,4 +53,14 @@ class PlanController extends Controller
 
         return redirect('/my-plans');
     }
+
+    /**
+     * Delete specified plan if user is owner
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function deletePlan(Request $request)
+    {
+        //
+    }
 }
