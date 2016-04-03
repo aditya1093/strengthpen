@@ -14,7 +14,7 @@
                 <div class="panel-body">
                     @include('errors.common')
 
-                    <form action="{{ url('plan') }}" method="POST" class="form-horizontal">
+                    <form action="{{ url('/plan') }}" method="POST" class="form-horizontal">
                         {!! csrf_field() !!}
 
                         <div class="form-group">
@@ -56,9 +56,14 @@
                                 {{ $plan->description }}
                             </div>
                             <div class="panel-footer">
-                                <button type="submit" class="btn btn-danger">
-                                    <i class="fa fa-btn fa-trash"></i> Delete
-                                </button>
+                                <form action="{{ url('/plan/'.$plan->id) }}" method="POST">
+                                    {!! csrf_field() !!}
+                                    {!! method_field('DELETE') !!}
+
+                                    <button type="submit" class="btn btn-danger">
+                                        <i class="fa fa-btn fa-trash"></i> Delete
+                                    </button>
+                                </form>
                             </div>
                         </div>
                         @endforeach
