@@ -23,9 +23,9 @@ class PublicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function welcome()
+    public function index()
     {
-        return view('welcome');
+        return view('public.index');
     }
 
     /**
@@ -34,6 +34,6 @@ class PublicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function howItWorks() {
-        return view('how-it-works');
+        return view('public.how-it-works');
     }
 }

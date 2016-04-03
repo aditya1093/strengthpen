@@ -24,12 +24,12 @@ class PlanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function myPlans(Request $request)
+    public function index(Request $request)
     {
         $reqUserID = $request->user()->id;
         $plans = Plan::where('user_id', $reqUserID)->get();
 
-        return view('my-plans', [
+        return view('plans.index', [
             'plans' => $plans,
         ]);
     }
@@ -39,7 +39,7 @@ class PlanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function addPlan(Request $request)
+    public function store(Request $request)
     {
         $this->validate($request, [
             'name' => 'required|max:255',
@@ -51,7 +51,7 @@ class PlanController extends Controller
             'description' => $request->description,
         ]);
 
-        return redirect('/my-plans');
+        return redirect('/plans');
     }
 
     /**
@@ -59,12 +59,12 @@ class PlanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function deletePlan(Request $request, Plan $plan)
+    public function destroy(Request $request, Plan $plan)
     {
         $this->authorize('destroy', $plan);
 
         $plan->delete();
 
-        return redirect('/my-plans');
+        return redirect('/plans');
     }
 }

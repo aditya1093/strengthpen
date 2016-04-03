@@ -18,7 +18,7 @@ Route::auth();
 |--------------------------------------------------------------------------
 | Can be accessed by all users
 */
-Route::get('/', 'PublicController@welcome');
+Route::get('/', 'PublicController@index');
 Route::get('/how-it-works', 'PublicController@howItWorks');
 
 /*
@@ -26,6 +26,6 @@ Route::get('/how-it-works', 'PublicController@howItWorks');
 |--------------------------------------------------------------------------
 | Can only be accessed by logged in users
 */
-Route::get('/my-plans', 'PlanController@myPlans');
-Route::post('/plan', 'PlanController@addPlan');
-Route::delete('/plan/{plan}', 'PlanController@deletePlan');
+Route::get('/plans', 'PlanController@index');
+Route::post('/plan', 'PlanController@store');
+Route::delete('/plan/{plan}', 'PlanController@destroy');
