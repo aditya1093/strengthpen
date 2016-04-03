@@ -11,3 +11,7 @@ body {
     float: left;
     margin-right: 1.3333%
 }
+
+.inline-btn-form {
+    display: inline-block;
+}

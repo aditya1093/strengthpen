@@ -56,12 +56,18 @@
                                 {{ $plan->description }}
                             </div>
                             <div class="panel-footer">
-                                <form action="{{ url('/plan/'.$plan->id) }}" method="POST">
+                                <form class="inline-btn-form" action="{{ url('/plan/'.$plan->id) }}" method="POST">
                                     {!! csrf_field() !!}
                                     {!! method_field('DELETE') !!}
 
                                     <button type="submit" class="btn btn-danger">
                                         <i class="fa fa-btn fa-trash"></i> Delete
+                                    </button>
+                                </form>
+
+                                <form class="inline-btn-form" action="" method="">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fa fa-btn fa-pencil"></i> Edit
                                     </button>
                                 </form>
                             </div>
