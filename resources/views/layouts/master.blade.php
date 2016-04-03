@@ -28,5 +28,6 @@
     <script src="libs/jquery-2.2.2/jquery.min.js"></script>
     <script src="libs/bootstrap-3.3.6/js/bootstrap.min.js"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+    <script src="scripts/strengthpen.js"></script>
 </body>
 </html>
