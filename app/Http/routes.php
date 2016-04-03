@@ -26,4 +26,4 @@ Route::get('/how-it-works', 'PublicController@howItWorks');
 |--------------------------------------------------------------------------
 | Can only be accessed by logged in users
 */
-Route::get('/dashboard', 'HomeController@dashboard');
+Route::get('/my-plans', 'PlanController@myPlans');

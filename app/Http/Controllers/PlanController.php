@@ -6,7 +6,7 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Plan;
 
-class HomeController extends Controller
+class PlanController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,12 +23,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function dashboard(Request $request)
+    public function myPlans(Request $request)
     {
         $reqUserID = $request->user()->id;
         $plans = Plan::where('user_id', $reqUserID)->get();
 
-        return view('dashboard', [
+        return view('my-plans', [
             'plans' => $plans,
         ]);
     }
