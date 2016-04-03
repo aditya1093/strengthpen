@@ -32,4 +32,19 @@ class PlanController extends Controller
             'plans' => $plans,
         ]);
     }
+
+    /**
+     * Receive request and add a new plan
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function addPlan(Request $request)
+    {
+        $reqUserID = $request->user()->id;
+        $plans = Plan::where('user_id', $reqUserID)->get();
+
+        return view('my-plans', [
+            'plans' => $plans,
+        ]);
+    }
 }

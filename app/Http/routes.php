@@ -27,3 +27,4 @@ Route::get('/how-it-works', 'PublicController@howItWorks');
 | Can only be accessed by logged in users
 */
 Route::get('/my-plans', 'PlanController@myPlans');
+Route::post('/plan', 'PlanController@addPlan');
