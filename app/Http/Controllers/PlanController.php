@@ -59,8 +59,8 @@ class PlanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function deletePlan(Request $request)
+    public function deletePlan(Request $request, Plan $plan)
     {
-        //
+        $this->authorize('destroy', $plan);
     }
 }
