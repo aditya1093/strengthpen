@@ -62,5 +62,9 @@ class PlanController extends Controller
     public function deletePlan(Request $request, Plan $plan)
     {
         $this->authorize('destroy', $plan);
+
+        $plan->delete();
+
+        return redirect('/my-plans');
     }
 }
