@@ -23,4 +23,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get all of the plans for the user
+     */
+    public function plans() {
+        return $this->hasMany(Plan::class);
+    }
 }

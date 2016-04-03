@@ -14,4 +14,11 @@ class Plan extends Model
     protected $fillable = [
         'name', 'description'
     ];
+
+    /**
+     * Get the user that owns the plan
+     */
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }
