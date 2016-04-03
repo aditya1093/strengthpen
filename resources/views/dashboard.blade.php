@@ -38,6 +38,23 @@
                         </div>
                 </div>
             </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">My Plans</div>
+
+                <div class="panel-body">
+                    @if(count($plans) !== 0)
+                        @foreach ($plans as $plan)
+                        <div class="col-md-4">
+                            <div>{{ $plan->name }}</div>
+                            <div>{{ $plan->description }}</div>
+                        </div>
+                        @endforeach
+                    @else
+                        <div>You haven't added any plans yet.</div>
+                    @endif
+                </div>
+            </div>
         </div>
     </div>
 </div>
