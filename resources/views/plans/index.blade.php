@@ -16,7 +16,7 @@
                     <h3 class="panel-title pull-left"><strong>My Plans</strong></h3>
                     <div class="panel-toolbar pull-right">
                         <div class="btn-group" role="group" aria-label="...">
-                            <!-- Toggle "Add Plan"-Modal with necessary data -->
+                            <!-- Toggle "Add Plan"-Modal with plan data -->
                             <button class="btn btn-sm btn-primary"
                                     data-toggle="modal"
                                     data-target=".bs-add-plan-modal">
@@ -38,7 +38,7 @@
                                 {{ $plan->description }}
                             </div>
                             <div class="panel-footer">
-                                <!-- Toggle "Confirm Delete"-Modal with necessary data -->
+                                <!-- Toggle "Delete Plan"-Modal with plan data -->
                                 <button class="btn btn-sm btn-danger"
                                         data-toggle="modal"
                                         data-target=".bs-delete-plan-modal"
@@ -47,7 +47,7 @@
                                     <i class="fa fa-btn fa-trash"></i> Delete
                                 </button>
 
-                                <!-- Toggle "Edit Plan"-Modal with necessary data -->
+                                <!-- Toggle "Edit Plan"-Modal with plan data -->
                                 <button class="btn btn-sm btn-primary"
                                         data-toggle="modal"
                                         data-target=".bs-edit-plan-modal"
@@ -56,6 +56,11 @@
                                         data-plan-description="{{ $plan->description }}">
                                     <i class="fa fa-btn fa-pencil"></i> Edit
                                 </button>
+
+                                <!-- Open plan in detail view -->
+                                <a class="btn btn-sm btn-default" href="{{ url('/plan/'.$plan->id) }}">
+                                    <i class="fa fa-btn fa-eye"></i> Read
+                                </a>
                             </div>
                         </div>
                         @endforeach
