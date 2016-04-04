@@ -42,8 +42,8 @@ class PlanController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:255',
-            'description' => 'required|max:255',
+            'name' => 'required|max:40',
+            'description' => 'required|max:120',
         ]);
 
         $request->user()->plans()->create([
