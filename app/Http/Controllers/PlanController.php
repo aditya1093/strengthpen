@@ -59,9 +59,21 @@ class PlanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, Plan $plan)
+    public function update(Request $request, Plan $plan)
     {
-        //Update plan
+        $this->authorize('update', $plan);
+
+        $this->validate($request, [
+            'name' => 'required|max:40',
+            'description' => 'required|max:120',
+        ]);
+
+        //Set new property values
+        $plan->name = $request->name;
+        $plan->description = $request->description;
+        $plan->save();
+
+        return redirect('/plans');
     }
 
     /**

@@ -29,3 +29,4 @@ Route::get('/how-it-works', 'PublicController@howItWorks');
 Route::get('/plans', 'PlanController@index');
 Route::post('/plan', 'PlanController@store');
 Route::delete('/plan/{plan}', 'PlanController@destroy');
+Route::put('/plan/{plan}', 'PlanController@update');
