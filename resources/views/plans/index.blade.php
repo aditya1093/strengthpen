@@ -16,7 +16,10 @@
                     <h3 class="panel-title pull-left"><strong>My Plans</strong></h3>
                     <div class="panel-toolbar pull-right">
                         <div class="btn-group" role="group" aria-label="...">
-                            <button class="btn btn-sm btn-primary" data-toggle="modal" data-target=".bs-add-plan-modal">
+                            <!-- Toggle "Add Plan"-Modal with necessary data -->
+                            <button class="btn btn-sm btn-primary"
+                                    data-toggle="modal"
+                                    data-target=".bs-add-plan-modal">
                                 <i class="fa fa-btn fa-plus"></i> Add Plan
                             </button>
                         </div>
@@ -35,16 +38,19 @@
                                 {{ $plan->description }}
                             </div>
                             <div class="panel-footer">
-                                <form class="inline-block" action="{{ url('/plan/'.$plan->id) }}" method="POST">
-                                    {!! csrf_field() !!}
-                                    {!! method_field('DELETE') !!}
+                                <!-- Toggle "Confirm Delete"-Modal with necessary data -->
+                                <button class="btn btn-sm btn-danger"
+                                        data-toggle="modal"
+                                        data-target=".bs-delete-plan-modal"
+                                        data-form-action="{{ url('/plan/'.$plan->id) }}">
 
-                                    <button type="submit" class="btn btn-sm btn-danger">
-                                        <i class="fa fa-btn fa-trash"></i> Delete
-                                    </button>
-                                </form>
+                                    <i class="fa fa-btn fa-trash"></i> Delete
+                                </button>
 
-                                <button class="btn btn-sm btn-primary" data-toggle="modal" data-target=".bs-edit-plan-modal"
+                                <!-- Toggle "Edit Plan"-Modal with necessary data -->
+                                <button class="btn btn-sm btn-primary"
+                                        data-toggle="modal"
+                                        data-target=".bs-edit-plan-modal"
                                         data-form-action="{{ url('/plan/'.$plan->id) }}"
                                         data-plan-name="{{ $plan->name }}"
                                         data-plan-description="{{ $plan->description }}">
@@ -62,6 +68,7 @@
             <!-- Modals -->
             @include('plans.modals.add-plan')
             @include('plans.modals.edit-plan')
+            @include('plans.modals.delete-plan')
         </div>
     </div>
 </div>

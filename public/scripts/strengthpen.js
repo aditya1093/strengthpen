@@ -1,9 +1,10 @@
 $(document).ready(function() {
     (function() {
-        open_edit_plan_modal();
+        edit_plan_modal();
+        delete_plan_modal();
     })();
 
-    function open_edit_plan_modal() {
+    function edit_plan_modal() {
         $('.bs-edit-plan-modal').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget);
             var btnData = button.data();
@@ -13,10 +14,22 @@ $(document).ready(function() {
             var planDescription = btnData.planDescription;
 
             var modal  = $(this);
-            modal.find('#updateForm').attr( "action", formAction);
+            modal.find('#updatePlanForm').attr( "action", formAction);
             modal.find('.modal-title').html('Edit Plan <strong>' + planName + '</strong>');
             modal.find('#new-plan-name').val(planName);
             modal.find('#new-plan-description').val(planDescription);
+        });
+    }
+
+    function delete_plan_modal() {
+        $('.bs-delete-plan-modal').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget);
+            var btnData = button.data();
+
+            var formAction      = btnData.formAction;
+
+            var modal  = $(this);
+            modal.find('#deletePlanForm').attr( "action", formAction);
         });
     }
 });

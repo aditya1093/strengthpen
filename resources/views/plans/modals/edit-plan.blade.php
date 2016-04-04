@@ -1,5 +1,5 @@
 <div class="modal bs-edit-plan-modal" tabindex="-1" role="dialog">
-    <form id="updateForm" action="" method="POST">
+    <form id="updatePlanForm" action="" method="POST">
         {!! csrf_field() !!}
         {!! method_field('PUT') !!}
 
