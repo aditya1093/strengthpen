@@ -65,7 +65,7 @@ class PlanController extends Controller
             'description' => $request->description,
         ]);
 
-        return redirect('/plans');
+        return back();
     }
 
     /**
@@ -87,7 +87,7 @@ class PlanController extends Controller
         $plan->description = $request->description;
         $plan->save();
 
-        return redirect('/plans');
+        return back();
     }
 
     /**
