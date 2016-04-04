@@ -65,11 +65,12 @@
                                     </button>
                                 </form>
 
-                                <form class="inline-btn-form" action="" method="">
-                                    <button type="submit" class="btn btn-primary">
-                                        <i class="fa fa-btn fa-pencil"></i> Edit
-                                    </button>
-                                </form>
+                                <button class="btn btn-primary" data-toggle="modal" data-target=".bs-edit-plan-modal"
+                                        data-form-action="{{ url('/plan/'.$plan->id) }}"
+                                        data-plan-name="{{ $plan->name }}"
+                                        data-plan-description="{{ $plan->description }}">
+                                    <i class="fa fa-btn fa-pencil"></i> Edit
+                                </button>
                             </div>
                         </div>
                         @endforeach
@@ -78,6 +79,45 @@
                     @endif
                 </div>
             </div>
+
+            <div class="modal fade bs-edit-plan-modal" tabindex="-1" role="dialog">
+                <form id="updateForm" action="" method="POST">
+                    {!! csrf_field() !!}
+                    {!! method_field('PUT') !!}
+
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Edit Plan</h4>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="new-plan-name" class="col-sm-3 control-label">Name</label>
+                                    <div>
+                                        <input type="text" name="name" id="new-plan-name" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="new-plan-description" class="col-sm-3 control-label">Description</label>
+                                    <div>
+                                        <input type="text" name="description" id="new-plan-description" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-btn fa-close"></i> Close</button>
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-btn fa-floppy-o"></i> Save changes</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </form>
+            </div><!-- /.modal -->
+
         </div>
     </div>
 </div>
