@@ -1,9 +1,16 @@
 $(document).ready(function() {
+    /**
+     * Run functions on document.ready()
+     */
     (function() {
         edit_plan_modal();
         delete_plan_modal();
     })();
 
+    /**
+     * Fills the modal with the data from the chosen plan
+     * to enable editing
+     */
     function edit_plan_modal() {
         $('.bs-edit-plan-modal').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget);
@@ -21,6 +28,10 @@ $(document).ready(function() {
         });
     }
 
+    /**
+     * Fills the modal with the data from the chosen plan
+     * to enable deletion
+     */
     function delete_plan_modal() {
         $('.bs-delete-plan-modal').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget);
