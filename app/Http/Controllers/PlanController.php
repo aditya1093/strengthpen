@@ -35,6 +35,20 @@ class PlanController extends Controller
     }
 
     /**
+     * Show one plan
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function detail(Request $request, Plan $plan)
+    {
+        $this->authorize('detail', $plan);
+
+        return view('plans.detail', [
+            'plan' => $plan,
+        ]);
+    }
+
+    /**
      * Receive request and add a new plan
      *
      * @return \Illuminate\Http\Response

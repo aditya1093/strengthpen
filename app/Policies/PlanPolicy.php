@@ -33,4 +33,11 @@ class PlanPolicy
     public function update(User $user, Plan $plan) {
         return $user->id === $plan->user_id;
     }
+
+    /**
+     * Check if given user can update the given plan
+     */
+    public function detail(User $user, Plan $plan) {
+        return $user->id === $plan->user_id;
+    }
 }
