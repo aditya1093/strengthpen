@@ -55,6 +55,16 @@ class PlanController extends Controller
     }
 
     /**
+     * Update specified plan if user is owner
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Request $request, Plan $plan)
+    {
+        //Update plan
+    }
+
+    /**
      * Delete specified plan if user is owner
      *
      * @return \Illuminate\Http\Response
