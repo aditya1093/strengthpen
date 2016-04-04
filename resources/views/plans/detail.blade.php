@@ -16,7 +16,7 @@
                     <h3 class="panel-title pull-left"><strong>{{ $plan->name }}</strong></h3>
                     <div class="panel-toolbar pull-right">
                         <!-- Return to previous page -->
-                        <a class="btn btn-sm btn-default" href="javascript:history.go(-1)">
+                        <a class="btn btn-sm btn-default" href="{{ url('/plans') }}">
                             <i class="fa fa-btn fa-arrow-left"></i> Go Back
                         </a>
 
@@ -57,6 +57,7 @@
             <!-- TODO: Show all days of the selected plan -->
 
             <!-- Modals -->
+            @include('plans.modals.add-day')
             @include('plans.modals.edit-plan')
             @include('plans.modals.delete-plan')
         </div>
