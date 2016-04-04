@@ -1,4 +1,4 @@
-<div class="modal fade bs-edit-plan-modal" tabindex="-1" role="dialog">
+<div class="modal bs-edit-plan-modal" tabindex="-1" role="dialog">
     <form id="updateForm" action="" method="POST">
         {!! csrf_field() !!}
         {!! method_field('PUT') !!}

@@ -1,4 +1,4 @@
-<div class="modal fade bs-add-plan-modal" tabindex="-1" role="dialog">
+<div class="modal bs-add-plan-modal" tabindex="-1" role="dialog">
     <form id="addForm" action="/plan" method="POST">
         {!! csrf_field() !!}
         <div class="modal-dialog">
