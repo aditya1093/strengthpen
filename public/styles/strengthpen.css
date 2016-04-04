@@ -1,3 +1,4 @@
+/* Generic CSS */
 body {
     font-family: 'Lato';
 }
@@ -6,12 +7,25 @@ body {
     margin-right: 6px;
 }
 
+.inline-block {
+    display: inline-block;
+}
+
+/* Panels */
+.panel-heading:before,
+.panel-heading:after {
+    display: table;
+    content: "";
+    clear: both;
+}
+
+/* Plans */
 .plan {
     width: 32%;
     float: left;
     margin-right: 1.3333%
 }
 
-.inline-btn-form {
-    display: inline-block;
+.plan .panel-body {
+    height: 94px;
 }
