@@ -36,10 +36,3 @@ body {
     float: left;
     margin-right: 1.3333%;
 }
-
-.day:hover {
-    -webkit-box-shadow: 0px 0px 3px 0px rgba(9,9,9,0.2);
-    -moz-box-shadow: 0px 0px 3px 0px rgba(9,9,9,0.2);
-    box-shadow: 0px 0px 3px 0px rgba(9,9,9,0.2);
-    cursor: pointer;
-}
