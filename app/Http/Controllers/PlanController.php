@@ -103,6 +103,9 @@ class PlanController extends Controller
     {
         $this->authorize('destroy', $plan);
 
+        //Delete all days that belong to the plan
+        $deletedDays = Day::where('plan_id', $plan->id)->delete();
+
         $plan->delete();
 
         return redirect('/plans');
