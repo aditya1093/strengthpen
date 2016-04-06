@@ -63,10 +63,20 @@
                         @for ($i = 0; $i < count($days); $i++)
                             <div class="day day-{{ $i+1 }} panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">Day {{ $i+1 }}</h3>
+                                    <h3 class="panel-title">
+                                        Day {{ $i+1 }}
+                                        @if($days[$i]->title)
+                                            <span class="day-title">{{ $days[$i]->title }}</span>
+                                        @endif
+                                    </h3>
                                 </div>
                                 <div class="panel-body">
-                                    <!-- TODO: Show blocks of day -->
+                                    @if($days[$i]->date != '0000-00-00')
+                                        <div class="day-date">{{ $days[$i]->date }}</div>
+                                    @endif
+                                    @if($days[$i]->schedule)
+                                        <div class="day-schedule">{{ $days[$i]->schedule }}</div>
+                                    @endif
                                 </div>
                                 <div class="panel-footer">
                                     <!-- Toggle "Delete Day"-Modal with day data -->
@@ -77,6 +87,7 @@
                                         <i class="fa fa-trash"></i>
                                     </button>
 
+                                    <!-- TODO: Toggle "Edit Day"-Modal with day data -->
                                     <!-- TODO: Toggle "View Day"-Modal with day data -->
                                 </div>
                             </div>
