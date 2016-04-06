@@ -49,15 +49,17 @@ $(document).ready(function() {
      * Fills the modal with the data from the chosen day
      * to enable deletion
      */
-    function delete_plan_modal() {
+    function delete_day_modal() {
         $('.bs-delete-day-modal').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget);
             var btnData = button.data();
 
             var formAction      = btnData.formAction;
+            var planId          = btnData.planId;
 
             var modal  = $(this);
             modal.find('#deleteDayForm').attr( "action", formAction);
+            modal.find('#planId').val(planId);
         });
     }
 });

@@ -73,7 +73,8 @@
                                     <button class="btn btn-sm btn-danger"
                                             data-toggle="modal"
                                             data-target=".bs-delete-day-modal"
-                                            data-form-action="{{ url('/day/'.$days[$i]->id) }}">
+                                            data-form-action="{{ url('/day/'.$days[$i]->id) }}"
+                                            data-plan-id="{{ $plan->id }}">
                                         <i class="fa fa-trash"></i>
                                     </button>
 

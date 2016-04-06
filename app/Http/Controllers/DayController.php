@@ -36,4 +36,20 @@ class DayController extends Controller
 
         return back();
     }
+
+    /**
+     * Delete specified plan if user is owner
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Request $request, Day $day)
+    {
+        $plan = Plan::findOrFail($request->planId);
+        
+        $this->authorize('destroy', $plan , $day);
+
+        $day->delete();
+
+        return back();
+    }
 }
