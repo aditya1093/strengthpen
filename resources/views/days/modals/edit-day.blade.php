@@ -20,7 +20,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="new-day-date" class="col-sm-3 control-label">Date</label>
+                        <label for="new-day-date" class="col-sm-3 control-label">Date (Y-M-D)</label>
                         <div>
                             <input type="text" name="date" id="new-day-date" class="form-control">
                         </div>

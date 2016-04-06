@@ -52,7 +52,7 @@ class DayController extends Controller
         ]);
 
         //Set new property values
-        $day->name = $request->title;
+        $day->title = $request->title;
         $day->date = $request->date;
         $day->schedule = $request->schedule;
         $day->save();

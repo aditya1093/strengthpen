@@ -65,17 +65,14 @@
                                 <div class="panel-heading">
                                     <h3 class="panel-title">
                                         Day {{ $i+1 }}
-                                        @if($days[$i]->title)
-                                            <span class="day-title">{{ $days[$i]->title }}</span>
-                                        @endif
                                     </h3>
                                 </div>
                                 <div class="panel-body">
-                                    @if($days[$i]->date != '0000-00-00')
-                                        <div class="day-date">{{ $days[$i]->date }}</div>
+                                    @if($days[$i]->title)
+                                        <div class="day-title"><strong>{{ $days[$i]->title }}</strong></div>
                                     @endif
-                                    @if($days[$i]->schedule)
-                                        <div class="day-schedule">{{ $days[$i]->schedule }}</div>
+                                    @if($days[$i]->date != '0000-00-00')
+                                        <div class="day-date">{{ date('F d, Y', strtotime($days[$i]->date)) }}</div>
                                     @endif
                                 </div>
                                 <div class="panel-footer">
@@ -92,9 +89,9 @@
                                             data-toggle="modal"
                                             data-target=".bs-edit-day-modal"
                                             data-form-action="{{ url('/day/'.$days[$i]->id) }}"
-                                            data-plan-title="{{ $days[$i]->title }}"
-                                            data-plan-date="{{ $days[$i]->date }}"
-                                            data-plan-schedule="{{ $days[$i]->schedule }}">
+                                            data-day-title="{{ $days[$i]->title }}"
+                                            data-day-date="{{ $days[$i]->date }}"
+                                            data-day-schedule="{{ $days[$i]->schedule }}">
                                         <i class="fa fa-pencil"></i>
                                     </button>
 
