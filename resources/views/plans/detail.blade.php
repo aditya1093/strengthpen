@@ -68,6 +68,17 @@
                                 <div class="panel-body">
                                     <!-- TODO: Show blocks of day -->
                                 </div>
+                                <div class="panel-footer">
+                                    <!-- Toggle "Delete Day"-Modal with day data -->
+                                    <button class="btn btn-sm btn-danger"
+                                            data-toggle="modal"
+                                            data-target=".bs-delete-day-modal"
+                                            data-form-action="{{ url('/day/'.$days[$i]->id) }}">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+
+                                    <!-- TODO: Toggle "View Day"-Modal with day data -->
+                                </div>
                             </div>
                         @endfor
                     @else
@@ -76,10 +87,13 @@
                 </div>
             </div>
 
-            <!-- Modals -->
+            <!-- Plan-related Modals-->
             @include('plans.modals.add-day')
             @include('plans.modals.edit-plan')
             @include('plans.modals.delete-plan')
+
+            <!-- Day-related Modals -->
+            @include('days.modals.delete-day')
         </div>
     </div>
 </div>

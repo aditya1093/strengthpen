@@ -5,6 +5,7 @@ $(document).ready(function() {
     (function() {
         edit_plan_modal();
         delete_plan_modal();
+        delete_day_modal();
     })();
 
     /**
@@ -41,6 +42,22 @@ $(document).ready(function() {
 
             var modal  = $(this);
             modal.find('#deletePlanForm').attr( "action", formAction);
+        });
+    }
+
+    /**
+     * Fills the modal with the data from the chosen day
+     * to enable deletion
+     */
+    function delete_plan_modal() {
+        $('.bs-delete-day-modal').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget);
+            var btnData = button.data();
+
+            var formAction      = btnData.formAction;
+
+            var modal  = $(this);
+            modal.find('#deleteDayForm').attr( "action", formAction);
         });
     }
 });
