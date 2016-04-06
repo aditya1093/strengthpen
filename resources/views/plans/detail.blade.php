@@ -17,14 +17,14 @@
                     <div class="panel-toolbar pull-right">
                         <!-- Return to previous page -->
                         <a class="btn btn-sm btn-default" href="{{ url('/plans') }}">
-                            <i class="fa fa-btn fa-arrow-left"></i> Go Back
+                            <i class="fa fa-btn fa-arrow-left"></i> Go back
                         </a>
 
                         <!-- Toggle "Add Plan"-Modal with plan data -->
                         <button class="btn btn-sm btn-primary"
                                 data-toggle="modal"
                                 data-target=".bs-add-day-modal">
-                            <i class="fa fa-btn fa-plus"></i> Add Day
+                            <i class="fa fa-btn fa-plus"></i> Add days
                         </button>
 
                         <!-- Toggle "Edit Plan"-Modal with plan data -->
@@ -42,7 +42,6 @@
                                 data-toggle="modal"
                                 data-target=".bs-delete-plan-modal"
                                 data-form-action="{{ url('/plan/'.$plan->id) }}">
-
                             <i class="fa fa-btn fa-trash"></i> Delete
                         </button>
                     </div>
