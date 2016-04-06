@@ -47,13 +47,34 @@
                     </div>
                 </div>
 
-                <!-- Show all plans -->
                 <div class="panel-body">
                     {{ $plan->description }}
                 </div>
             </div>
 
-            <!-- TODO: Show all days of the selected plan -->
+            <!-- Show all days of the selected plan -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title pull-left">Your Days</h3>
+                </div>
+
+                <div class="panel-body">
+                    @if(count($days) !== 0)
+                        @foreach ($days as $day)
+                            <div class="day day-{{ $day->id }} panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Day {{ $day->id }}</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <!-- TODO: Show blocks of day -->
+                                </div>
+                            </div>
+                        @endforeach
+                    @else
+                        <div>You haven't added any days yet.</div>
+                    @endif
+                </div>
+            </div>
 
             <!-- Modals -->
             @include('plans.modals.add-day')

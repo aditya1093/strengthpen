@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Plan;
+use App\Day;
 use App\User;
 
 class PlanController extends Controller
@@ -43,8 +44,11 @@ class PlanController extends Controller
     {
         $this->authorize('detail', $plan);
 
+        $days = $plan->days()->get();
+
         return view('plans.detail', [
             'plan' => $plan,
+            'days' => $days,
         ]);
     }
 
