@@ -61,7 +61,7 @@
                 <div class="panel-body">
                     @if(count($days) !== 0)
                         @for ($i = 0; $i < count($days); $i++)
-                            <div class="day day-{{ $days[$i]->id }} panel panel-default">
+                            <div class="day day-{{ $i+1 }} panel panel-default">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">Day {{ $i+1 }}</h3>
                                 </div>
