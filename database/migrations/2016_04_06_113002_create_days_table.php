@@ -15,6 +15,9 @@ class CreateDaysTable extends Migration
         Schema::create('days', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('plan_id')->index();
+            $table->string('title');
+            $table->date('date');
+            $table->text('schedule');
             $table->timestamps();
         });
     }

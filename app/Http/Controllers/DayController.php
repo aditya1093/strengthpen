@@ -38,6 +38,29 @@ class DayController extends Controller
     }
 
     /**
+     * Update specified day if user is owner
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Day $day)
+    {
+        $this->authorize('update', $day);
+
+        $this->validate($request, [
+            'title' => 'max:20',
+            'date' => 'date',
+        ]);
+
+        //Set new property values
+        $day->name = $request->title;
+        $day->date = $request->date;
+        $day->schedule = $request->schedule;
+        $day->save();
+
+        return back();
+    }
+
+    /**
      * Delete specified day if user is owner
      *
      * @return \Illuminate\Http\Response
