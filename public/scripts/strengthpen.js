@@ -4,6 +4,7 @@ $(document).ready(function() {
      */
     (function() {
         edit_plan_modal();
+        edit_day_modal();
         delete_plan_modal();
         delete_day_modal();
     })();
@@ -26,6 +27,28 @@ $(document).ready(function() {
             modal.find('.modal-title').html('Edit Plan <strong>' + planName + '</strong>');
             modal.find('#new-plan-name').val(planName);
             modal.find('#new-plan-description').val(planDescription);
+        });
+    }
+
+    /**
+     * Fills the modal with the data from the chosen day
+     * to enable editing
+     */
+    function edit_day_modal() {
+        $('.bs-edit-day-modal').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget);
+            var btnData = button.data();
+
+            var formAction      = btnData.formAction;
+            var dayTitle        = btnData.dayTitle;
+            var dayDate         = btnData.dayDate;
+            var daySchedule     = btnData.daySchedule;
+
+            var modal  = $(this);
+            modal.find('#updateDayForm').attr( "action", formAction);
+            modal.find('#new-day-title').val(dayTitle);
+            modal.find('#new-day-date').val(dayDate);
+            modal.find('#new-day-schedule').text(daySchedule);
         });
     }
 

@@ -87,7 +87,17 @@
                                         <i class="fa fa-trash"></i>
                                     </button>
 
-                                    <!-- TODO: Toggle "Edit Day"-Modal with day data -->
+                                    <!-- Toggle "Edit Day"-Modal with day data -->
+                                    <button class="btn btn-sm btn-primary"
+                                            data-toggle="modal"
+                                            data-target=".bs-edit-day-modal"
+                                            data-form-action="{{ url('/day/'.$days[$i]->id) }}"
+                                            data-plan-title="{{ $days[$i]->title }}"
+                                            data-plan-date="{{ $days[$i]->date }}"
+                                            data-plan-schedule="{{ $days[$i]->schedule }}">
+                                        <i class="fa fa-pencil"></i>
+                                    </button>
+
                                     <!-- TODO: Toggle "View Day"-Modal with day data -->
                                 </div>
                             </div>
@@ -104,6 +114,7 @@
             @include('plans.modals.delete-plan')
 
             <!-- Day-related Modals -->
+            @include('days.modals.edit-day')
             @include('days.modals.delete-day')
         </div>
     </div>
