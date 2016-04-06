@@ -60,16 +60,16 @@
 
                 <div class="panel-body">
                     @if(count($days) !== 0)
-                        @foreach ($days as $day)
-                            <div class="day day-{{ $day->id }} panel panel-default">
+                        @for ($i = 0; $i < count($days); $i++)
+                            <div class="day day-{{ $days[$i]->id }} panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">Day {{ $day->id }}</h3>
+                                    <h3 class="panel-title">Day {{ $i+1 }}</h3>
                                 </div>
                                 <div class="panel-body">
                                     <!-- TODO: Show blocks of day -->
                                 </div>
                             </div>
-                        @endforeach
+                        @endfor
                     @else
                         <div>You haven't added any days yet.</div>
                     @endif
