@@ -1,7 +1,6 @@
 <div class="modal bs-add-day-modal" tabindex="-1" role="dialog">
-    <form id="addDayForm" action="/day" method="POST">
+    <form id="addDayForm" action="{{ url('/day/'.$plan->id) }}" method="POST">
         {!! csrf_field() !!}
-        <input type="hidden" id="planId" name="planId" value="{{ $plan->id }}">
 
         <div class="modal-dialog">
             <div class="modal-content">

@@ -37,4 +37,4 @@ Route::put('/plan/{plan}', 'PlanController@update');
 |--------------------------------------------------------------------------
 | Can only be accessed by logged in users
 */
-Route::post('/day', 'DayController@store');
+Route::post('/day/{plan}', 'DayController@store');

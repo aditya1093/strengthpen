@@ -25,13 +25,15 @@ class DayController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Plan $plan)
     {
-        //$plan->plans()->create();
-
-        $planId = $request->planId;
+        //How many days should be created
         $amount = $request->amount;
 
-        return $planId." ".$amount;
+        for($i = 1; $i <= $amount; $i++) {
+            $plan->days()->create([]);
+        }
+
+        return back();
     }
 }
