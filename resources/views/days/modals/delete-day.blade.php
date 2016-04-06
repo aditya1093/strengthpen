@@ -19,8 +19,6 @@
                         {!! csrf_field() !!}
                         {!! method_field('DELETE') !!}
 
-                        <input type="hidden" id="planId" name="planId" value="">
-
                         <button type="submit" class="btn btn-danger">
                             <i class="fa fa-btn fa-trash"></i> Delete
                         </button>

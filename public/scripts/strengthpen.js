@@ -55,11 +55,9 @@ $(document).ready(function() {
             var btnData = button.data();
 
             var formAction      = btnData.formAction;
-            var planId          = btnData.planId;
 
             var modal  = $(this);
             modal.find('#deleteDayForm').attr( "action", formAction);
-            modal.find('#planId').val(planId);
         });
     }
 });
