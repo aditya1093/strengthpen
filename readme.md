@@ -10,16 +10,22 @@ cp .env.example .env
 composer install
 ```
 
-Then you need to enter the .env file and edit your database connection
-`nano .env`
-Don't forget to save, but nano should remind you to do that.
+Then you need to edit the `.env` file and enter your database connection.
+In the terminal you can do this by running:
+```
+nano .env
+```
+Don't forget to save, but `nano` should remind you to do that.
+You can also use any other editor of course to edit the file.
 
 Then run
 ```
 php artisan key:generate
 php artisan migrate --seed
 ```
-This generates a new key for your app in the .env file and it created and fills the database tables
+This generates a new key for your app in the `.env` file and it creates and fills the database tables
 
 To start the webserver run
-`php artisan serve`
+```
+php artisan serve
+```
