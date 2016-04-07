@@ -17,7 +17,7 @@ class CreateDaysTable extends Migration
             $table->integer('plan_id')->index();
             $table->string('title');
             $table->date('date');
-            $table->json('schedule');
+            $table->text('schedule');
             $table->timestamps();
         });
     }
