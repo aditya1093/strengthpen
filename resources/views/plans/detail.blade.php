@@ -72,7 +72,7 @@
                                         <div class="day-title"><strong>{{ $days[$i]->title }}</strong></div>
                                     @endif
                                     @if($days[$i]->date != '0000-00-00')
-                                        <div class="day-date">{{ date('F d, Y', strtotime($days[$i]->date)) }}</div>
+                                        <div class="day-date">{{ date('M j, Y', strtotime($days[$i]->date)) }}</div>
                                     @endif
                                 </div>
                                 <div class="panel-footer">
@@ -96,6 +96,13 @@
                                     </button>
 
                                     <!-- TODO: Toggle "View Day"-Modal with day data -->
+                                    <button class="btn btn-sm btn-default"
+                                            data-toggle="modal"
+                                            data-target=".bs-view-day-modal"
+                                            data-day-title="{{ $days[$i]->title }}"
+                                            data-day-schedule="{{ $days[$i]->schedule }}">
+                                        <i class="fa fa-eye"></i>
+                                    </button>
                                 </div>
                             </div>
                         @endfor
@@ -113,6 +120,7 @@
             <!-- Day-related Modals -->
             @include('days.modals.edit-day')
             @include('days.modals.delete-day')
+            @include('days.modals.view-day')
         </div>
     </div>
 </div>

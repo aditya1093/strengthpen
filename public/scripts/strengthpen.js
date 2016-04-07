@@ -7,6 +7,7 @@ $(document).ready(function() {
         edit_day_modal();
         delete_plan_modal();
         delete_day_modal();
+        view_day_modal();
     })();
 
     /**
@@ -81,6 +82,24 @@ $(document).ready(function() {
 
             var modal  = $(this);
             modal.find('#deleteDayForm').attr( "action", formAction);
+        });
+    }
+
+    /**
+     * Fills the modal with the data from the chosen day
+     * to enable viewing
+     */
+    function view_day_modal() {
+        $('.bs-view-day-modal').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget);
+            var btnData = button.data();
+
+            var dayTitle        = btnData.dayTitle;
+            var daySchedule     = btnData.daySchedule;
+
+            var modal  = $(this);
+            modal.find('.modal-title').html('<strong>'+dayTitle+'</strong>');
+            modal.find('#day-schedule').html('<pre>'+daySchedule+'</pre>');
         });
     }
 });
