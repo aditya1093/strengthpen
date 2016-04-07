@@ -29,5 +29,11 @@ class PlansTableSeeder extends Seeder
             'name' => 'Wendler 5/3/1',
             'description' => 'A purely strength-based program. You want to get really strong and dont care about the rest? This is your program.'
         ]);
+
+        Plan::create([
+            'user_id' => '2',
+            'name' => 'Wendler 5/3/1',
+            'description' => 'A purely strength-based program. You want to get really strong and dont care about the rest? This is your program.'
+        ]);
     }
 }
