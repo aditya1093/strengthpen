@@ -27,6 +27,8 @@ class DayController extends Controller
      */
     public function store(Request $request, Plan $plan)
     {
+        $this->authorize('store', $plan);
+
         //How many days should be created
         $amount = $request->amount;
 

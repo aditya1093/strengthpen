@@ -21,6 +21,13 @@ class PlanPolicy
     }
 
     /**
+     * Check if given user may add days to plan
+     */
+    public function store(User $user, Plan $plan) {
+        return $user->id == $plan->user_id;
+    }
+
+    /**
      * Check if given user can delete the given plan
      */
     public function destroy(User $user, Plan $plan) {
