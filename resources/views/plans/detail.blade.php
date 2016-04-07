@@ -85,7 +85,7 @@
                                                     data-toggle="modal"
                                                     data-target=".bs-delete-day-modal"
                                                     data-form-action="{{ url('/day/'.$days[$i]->id) }}">
-                                                <i class="fa fa-trash"></i> Delete
+                                                <i class="fa fa-btn fa-trash"></i> Delete
                                             </button>
 
                                             <!-- Toggle "Edit Day"-Modal with day data -->
@@ -96,7 +96,7 @@
                                                     data-day-title="{{ $days[$i]->title }}"
                                                     data-day-date="{{ $days[$i]->date }}"
                                                     data-day-schedule="{{ $days[$i]->schedule }}">
-                                                <i class="fa fa-pencil"></i> Edit
+                                                <i class="fa fa-btn fa-pencil"></i> Edit
                                             </button>
 
                                             <!-- Toggle "View Day"-Modal with day data -->
@@ -105,7 +105,7 @@
                                                     data-target=".bs-view-day-modal"
                                                     data-day-title="{{ $days[$i]->title }}"
                                                     data-day-schedule="{{ $days[$i]->schedule }}">
-                                                <i class="fa fa-eye"></i> View
+                                                <i class="fa fa-btn fa-eye"></i> View
                                             </button>
                                         </div>
                                     </div>
