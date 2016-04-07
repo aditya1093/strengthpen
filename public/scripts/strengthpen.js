@@ -50,6 +50,11 @@ $(document).ready(function() {
             modal.find('#new-day-title').val(dayTitle);
             modal.find('#new-day-date').val(dayDate);
             modal.find('#new-day-schedule').text(daySchedule);
+
+            //Init datepicker
+            modal.find('#new-day-date').datepicker({
+                format: 'yyyy-mm-dd'
+            });
         });
     }
 

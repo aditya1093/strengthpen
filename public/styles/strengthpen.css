@@ -31,13 +31,13 @@ body {
 }
 
 /* Days */
-.day {
+.days {
     width: 18.6666%;
     float: left;
     margin-right: 1.3333%;
 }
 
-.day .panel-body {
+.days .panel-body {
     height: 94px;
 }
 
