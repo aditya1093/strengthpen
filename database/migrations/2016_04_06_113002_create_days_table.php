@@ -18,6 +18,7 @@ class CreateDaysTable extends Migration
             $table->string('title');
             $table->date('date');
             $table->text('schedule');
+            $table->boolean('done');
             $table->timestamps();
         });
     }

@@ -72,7 +72,16 @@
                                 <div class="panel-heading">
                                     <h3 class="panel-title">
                                         Day {{ $i+1 }}
+                                        <form class="pull-right" action="{{ url('/day/'.$days[$i]->id.'/done') }}" method="POST" data-js="mark-as-done">
+                                            {!! csrf_field(); !!}
+                                            {!! method_field('PUT') !!}
+
+                                            <button type="submit" class="btn btn-sm mark-as-done-btn @if($days[$i]->done == true) btn-success @else btn-default @endif">
+                                                <i class="fa fa-check"></i>
+                                            </button>
+                                        </form>
                                     </h3>
+
                                 </div>
                                 <div class="panel-body">
                                     @if($days[$i]->title)

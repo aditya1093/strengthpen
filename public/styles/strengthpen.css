@@ -47,8 +47,30 @@ body {
     margin-right: 0;
 }
 
+.days .panel-heading {
+    padding: 0;
+}
+
+.days .panel-heading h3 {
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.days .panel-heading h3 form {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.mark-as-done-btn {
+    height: 40px;
+    width: 40px;
+}
+
 .days .panel-body {
     height: 94px;
+    position: relative;
 }
 
 #new-day-schedule {
@@ -64,15 +86,11 @@ body {
     width: 100%;
 }
 
-.actions-overlay-btns {
-    padding-top: 40px;
-}
-
 .actions-overlay-btns .btn {
     width: 100%;
 }
 
-.days:hover .actions-overlay {
+.days .panel-body:hover .actions-overlay {
     display: block;
 }
 

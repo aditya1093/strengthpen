@@ -75,4 +75,36 @@ class DayController extends Controller
 
         return back();
     }
+
+    /**
+     * Mark day as done
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function markAsDone(Request $request, Day $day)
+    {
+        $this->authorize('update', $day);
+
+        $response = [];
+
+        if($day->done == false) {
+            $day->done = true;
+
+            $response['status'] = 'success';
+            $response['msg'] = 'day marked as done';
+            $response['dayState'] = 'done';
+        }
+        else {
+            $day->done = false;
+
+            $response['status'] = 'success';
+            $response['msg'] = 'day marked as not done';
+            $response['dayState'] = 'not done';
+        }
+
+        $day->save();
+
+        return response()->json($response);
+
+    }
 }

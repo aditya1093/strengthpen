@@ -8,6 +8,7 @@ $(document).ready(function() {
         delete_plan_modal();
         delete_day_modal();
         view_day_modal();
+        mark_day_as_done();
     })();
 
     /**
@@ -108,12 +109,41 @@ $(document).ready(function() {
             var button = $(event.relatedTarget);
             var btnData = button.data();
 
-            var dayTitle        = btnData.dayTitle;
-            var daySchedule     = btnData.daySchedule;
+            var dayTitle        = btnData.dayTitle || 'No title available';
+            var daySchedule     = btnData.daySchedule || 'No schedule available';
 
             var modal  = $(this);
             modal.find('.modal-title').html('<strong>'+dayTitle+'</strong>');
             modal.find('#day-schedule').html('<pre>'+daySchedule+'</pre>');
+        });
+    }
+
+    /**
+     * Mark day as done via AJAX
+     */
+    function mark_day_as_done() {
+        $('[data-js="mark-as-done"]').submit(function(event) {
+            var $form = $(this);
+            var $btn = $form.find('.mark-as-done-btn');
+
+            $.ajax({
+                url: $( this ).prop( 'action' ),
+                method: 'POST',
+                data: {
+                    "_token": $( this ).find( 'input[name=_token]' ).val(),
+                    "_method": $( this ).find( 'input[name=_method]' ).val(),
+                }
+            })
+            .done(function( data ) {
+                if(data.dayState == 'not done') {
+                    $btn.toggleClass('btn-default btn-success');
+                }
+                else if(data.dayState == 'done') {
+                    $btn.toggleClass('btn-default btn-success');
+                }
+            });
+
+            return false;
         });
     }
 });
