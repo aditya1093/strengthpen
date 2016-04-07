@@ -21,10 +21,14 @@ body {
 
 /* Plans */
 .plan {
-    width: 32%;
+    width: 32.4444%;
     float: left;
     margin-right: 1.3333%;
     position: relative;
+}
+
+.plan:nth-child(3n) {
+    margin-right: 0;
 }
 
 .plan .panel-body {
@@ -33,10 +37,14 @@ body {
 
 /* Days */
 .days {
-    width: 18.6666%;
+    width: 18.8888%;
     float: left;
     margin-right: 1.3333%;
     position: relative;
+}
+
+.days:nth-child(5n) {
+    margin-right: 0;
 }
 
 .days .panel-body {
@@ -66,4 +74,8 @@ body {
 
 .days:hover .actions-overlay {
     display: block;
+}
+
+.alert-info.alert-dismissible .close {
+    color: white;
 }
