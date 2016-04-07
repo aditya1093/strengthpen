@@ -40,3 +40,7 @@ body {
 .day .panel-body {
     height: 94px;
 }
+
+#new-day-schedule {
+    height: 400px;
+}
