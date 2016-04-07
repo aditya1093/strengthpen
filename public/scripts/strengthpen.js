@@ -43,13 +43,11 @@ $(document).ready(function() {
             var formAction      = btnData.formAction;
             var dayTitle        = btnData.dayTitle;
             var dayDate         = btnData.dayDate;
-            var daySchedule     = btnData.daySchedule;
 
             var modal  = $(this);
             modal.find('#updateDayForm').attr( "action", formAction);
             modal.find('#new-day-title').val(dayTitle);
             modal.find('#new-day-date').val(dayDate);
-            modal.find('#new-day-schedule').text(daySchedule);
 
             //Init datepicker
             modal.find('#new-day-date').datepicker({
@@ -109,11 +107,9 @@ $(document).ready(function() {
             var btnData = button.data();
 
             var dayTitle        = btnData.dayTitle;
-            var daySchedule     = btnData.daySchedule;
 
             var modal  = $(this);
             modal.find('.modal-title').html('<strong>'+dayTitle+'</strong>');
-            modal.find('#day-schedule').html('<pre>'+daySchedule+'</pre>');
         });
     }
 });

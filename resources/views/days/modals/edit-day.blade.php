@@ -26,11 +26,11 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="new-day-schedule" class="col-sm-3 control-label">Schedule</label>
-                        <div>
-                            <textarea type="text" name="schedule" id="new-day-schedule" class="form-control"></textarea>
-                        </div>
+                    <div>
+                        <p>
+                            <p>TODO: Show existing exercises</p>
+                            <p>TODO: Toolbar for adding new exercises</p>
+                        </p>
                     </div>
                 </div>
 
