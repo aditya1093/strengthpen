@@ -97,7 +97,8 @@
                                                     data-target=".bs-edit-day-modal"
                                                     data-form-action="{{ url('/day/'.$days[$i]->id) }}"
                                                     data-day-title="{{ $days[$i]->title }}"
-                                                    data-day-date="{{ $days[$i]->date }}">
+                                                    data-day-date="{{ $days[$i]->date }}"
+                                                    data-day-schedule="{{ $days[$i]->schedule }}">
                                                 <i class="fa fa-btn fa-pencil"></i> Edit
                                             </button>
 
@@ -105,7 +106,8 @@
                                             <button class="btn btn-sm btn-default"
                                                     data-toggle="modal"
                                                     data-target=".bs-view-day-modal"
-                                                    data-day-title="{{ $days[$i]->title }}">
+                                                    data-day-title="{{ $days[$i]->title }}"
+                                                    data-day-schedule="{{ $days[$i]->schedule }}">
                                                 <i class="fa fa-btn fa-eye"></i> View
                                             </button>
                                         </div>

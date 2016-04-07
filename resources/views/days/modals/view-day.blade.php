@@ -8,7 +8,7 @@
             </div>
 
             <div class="modal-body">
-                <div id="day-schedule">TODO: Show all exercises of the day</div>
+                <div id="day-schedule"></div>
             </div>
 
             <div class="modal-footer">
