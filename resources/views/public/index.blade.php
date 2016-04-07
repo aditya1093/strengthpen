@@ -12,7 +12,11 @@
                 <div class="panel-heading">Welcome</div>
 
                 <div class="panel-body">
-                    Your Application's Landing Page.
+                    Login for account with sample data:<br/>
+                    <strong>E-Mail: </strong>admin@strengthpen.de<br/>
+                    <strong>Password: </strong>strengthpen<br/>
+
+                    There are some sample plans filled with examples
                 </div>
             </div>
         </div>
