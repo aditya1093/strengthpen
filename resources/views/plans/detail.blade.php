@@ -57,13 +57,16 @@
                 <div class="panel-heading">
                     <h3 class="panel-title pull-left">Your Days</h3>
                 </div>
-                <div class="alert alert-info alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    Just hover over a day to see what you can do with it :)
-                </div>
+
+                @if(count($days) !== 0)
+                    <div class="alert alert-info alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        Just hover over a day to see what you can do with it :)
+                    </div>
+                @endif
+
                 <div class="panel-body">
                     @if(count($days) !== 0)
-
                         @for ($i = 0; $i < count($days); $i++)
                             <div class="days day-{{ $i+1 }} panel panel-default">
                                 <div class="panel-heading">
