@@ -13,8 +13,11 @@
 
                 <div class="panel-body">
                     Login for account with sample data:<br/>
-                    <strong>E-Mail: </strong>admin@strengthpen.de<br/>
-                    <strong>Password: </strong>strengthpen<br/>
+                    
+                    <div class="well">
+                        <strong>E-Mail: </strong>admin@strengthpen.de<br/>
+                        <strong>Password: </strong>strengthpen<br/>
+                    </div>
 
                     There are some sample plans filled with examples
                 </div>
