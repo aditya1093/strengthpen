@@ -59,7 +59,7 @@
 
                                 <!-- Open plan in detail view -->
                                 <a class="btn btn-sm btn-default" href="{{ url('/plan/'.$plan->id) }}">
-                                    <i class="fa fa-btn fa-eye"></i> Read
+                                    <i class="fa fa-btn fa-eye"></i> View
                                 </a>
                             </div>
                         </div>
