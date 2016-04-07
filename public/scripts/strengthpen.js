@@ -53,8 +53,17 @@ $(document).ready(function() {
 
             //Init datepicker
             modal.find('#new-day-date').datepicker({
-                format: 'yyyy-mm-dd'
+                format: 'yyyy-mm-dd',
+                todayBtn: 'linked',
             });
+
+            //Check if day has a date, if not set today as date
+            if(dayDate == '0000-00-00') {
+                dayDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
+            }
+
+            //Set date of datepicker
+            modal.find('#new-day-date').datepicker('setDate', dayDate);
         });
     }
 
