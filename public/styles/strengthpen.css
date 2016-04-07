@@ -23,7 +23,8 @@ body {
 .plan {
     width: 32%;
     float: left;
-    margin-right: 1.3333%
+    margin-right: 1.3333%;
+    position: relative;
 }
 
 .plan .panel-body {
@@ -35,6 +36,7 @@ body {
     width: 18.6666%;
     float: left;
     margin-right: 1.3333%;
+    position: relative;
 }
 
 .days .panel-body {
@@ -43,4 +45,25 @@ body {
 
 #new-day-schedule {
     height: 400px;
+}
+
+.actions-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.actions-overlay-btns {
+    padding-top: 40px;
+}
+
+.actions-overlay-btns .btn {
+    width: 100%;
+}
+
+.days:hover .actions-overlay {
+    display: block;
 }

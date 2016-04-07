@@ -60,6 +60,10 @@
 
                 <div class="panel-body">
                     @if(count($days) !== 0)
+                        <div class="alert alert-info alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            Just hover over a day to see what you can do with it :)
+                        </div>
                         @for ($i = 0; $i < count($days); $i++)
                             <div class="days day-{{ $i+1 }} panel panel-default">
                                 <div class="panel-heading">
@@ -74,35 +78,37 @@
                                     @if($days[$i]->date != '0000-00-00')
                                         <div class="day-date">{{ date('M j, Y', strtotime($days[$i]->date)) }}</div>
                                     @endif
-                                </div>
-                                <div class="panel-footer">
-                                    <!-- Toggle "Delete Day"-Modal with day data -->
-                                    <button class="btn btn-sm btn-danger"
-                                            data-toggle="modal"
-                                            data-target=".bs-delete-day-modal"
-                                            data-form-action="{{ url('/day/'.$days[$i]->id) }}">
-                                        <i class="fa fa-trash"></i>
-                                    </button>
+                                    <div class="actions-overlay">
+                                        <div class="actions-overlay-btns">
+                                            <!-- Toggle "Delete Day"-Modal with day data -->
+                                            <button class="btn btn-sm btn-danger"
+                                                    data-toggle="modal"
+                                                    data-target=".bs-delete-day-modal"
+                                                    data-form-action="{{ url('/day/'.$days[$i]->id) }}">
+                                                <i class="fa fa-trash"></i> Delete
+                                            </button>
 
-                                    <!-- Toggle "Edit Day"-Modal with day data -->
-                                    <button class="btn btn-sm btn-primary"
-                                            data-toggle="modal"
-                                            data-target=".bs-edit-day-modal"
-                                            data-form-action="{{ url('/day/'.$days[$i]->id) }}"
-                                            data-day-title="{{ $days[$i]->title }}"
-                                            data-day-date="{{ $days[$i]->date }}"
-                                            data-day-schedule="{{ $days[$i]->schedule }}">
-                                        <i class="fa fa-pencil"></i>
-                                    </button>
+                                            <!-- Toggle "Edit Day"-Modal with day data -->
+                                            <button class="btn btn-sm btn-primary"
+                                                    data-toggle="modal"
+                                                    data-target=".bs-edit-day-modal"
+                                                    data-form-action="{{ url('/day/'.$days[$i]->id) }}"
+                                                    data-day-title="{{ $days[$i]->title }}"
+                                                    data-day-date="{{ $days[$i]->date }}"
+                                                    data-day-schedule="{{ $days[$i]->schedule }}">
+                                                <i class="fa fa-pencil"></i> Edit
+                                            </button>
 
-                                    <!-- TODO: Toggle "View Day"-Modal with day data -->
-                                    <button class="btn btn-sm btn-default"
-                                            data-toggle="modal"
-                                            data-target=".bs-view-day-modal"
-                                            data-day-title="{{ $days[$i]->title }}"
-                                            data-day-schedule="{{ $days[$i]->schedule }}">
-                                        <i class="fa fa-eye"></i>
-                                    </button>
+                                            <!-- Toggle "View Day"-Modal with day data -->
+                                            <button class="btn btn-sm btn-default"
+                                                    data-toggle="modal"
+                                                    data-target=".bs-view-day-modal"
+                                                    data-day-title="{{ $days[$i]->title }}"
+                                                    data-day-schedule="{{ $days[$i]->schedule }}">
+                                                <i class="fa fa-eye"></i> View
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         @endfor
