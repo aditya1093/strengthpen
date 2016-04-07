@@ -23,7 +23,7 @@
                         <!-- Toggle "Add Plan"-Modal with plan data -->
                         <button class="btn btn-sm btn-primary"
                                 data-toggle="modal"
-                                data-target=".bs-add-day-modal">
+                                data-target=".bs-add-days-modal">
                             <i class="fa fa-btn fa-plus"></i> Add days
                         </button>
 
@@ -113,7 +113,7 @@
             </div>
 
             <!-- Plan-related Modals-->
-            @include('plans.modals.add-day')
+            @include('plans.modals.add-days')
             @include('plans.modals.edit-plan')
             @include('plans.modals.delete-plan')
 

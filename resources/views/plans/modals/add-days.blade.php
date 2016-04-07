@@ -1,5 +1,5 @@
-<div class="modal bs-add-day-modal" tabindex="-1" role="dialog">
-    <form id="addDayForm" action="{{ url('/day/'.$plan->id) }}" method="POST">
+<div class="modal bs-add-days-modal" tabindex="-1" role="dialog">
+    <form id="addDaysForm" action="{{ url('/day/'.$plan->id) }}" method="POST">
         {!! csrf_field() !!}
 
         <div class="modal-dialog">
