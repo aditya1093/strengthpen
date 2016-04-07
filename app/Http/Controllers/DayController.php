@@ -47,7 +47,7 @@ class DayController extends Controller
         $this->authorize('update', $day);
 
         $this->validate($request, [
-            'title' => 'max:20',
+            'title' => 'max:34',
             'date' => 'date',
         ]);
 

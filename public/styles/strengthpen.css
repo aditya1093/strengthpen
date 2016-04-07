@@ -32,7 +32,11 @@ body {
 
 /* Days */
 .day {
-    width: 15.3333%;
+    width: 18.6666%;
     float: left;
     margin-right: 1.3333%;
+}
+
+.day .panel-body {
+    height: 94px;
 }
