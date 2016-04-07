@@ -40,4 +40,3 @@ Route::put('/plan/{plan}', 'PlanController@update');
 Route::post('/day/{plan}', 'DayController@store');
 Route::delete('/day/{day}', 'DayController@destroy');
 Route::put('/day/{day}', 'DayController@update');
-Route::get('/day/{day}/schedule', 'DayController@getSchedule');

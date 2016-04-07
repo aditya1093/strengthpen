@@ -75,17 +75,4 @@ class DayController extends Controller
 
         return back();
     }
-
-    /**
-     * Return the schedule of the specified day
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function getSchedule(Request $request, Day $day)
-    {
-        $this->authorize('detail', $day);
-
-        return $day->schedule;
-    }
-
 }
